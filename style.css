@@ -35,8 +35,8 @@ html {
 
 .hidden-elem {
     filter: blur(5px);
-    transform: translateX(-20%);
     opacity: 0.8;
+    transform: scaleX(0.6);
 }
 
 .dark {
@@ -71,18 +71,18 @@ a:active {
 
 section {
     width: 80%;
-    min-height: 85dvh;
+    min-height: 80dvh;
     padding: 10dvh 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: all 1s ease-in-out;
+    transition: all 0.75s ease-in-out;
     border-bottom: 2px solid var(--a);
 }
 
 #home {
-    background: linear-gradient(to bottom, transparent, var(--d)), url("https://manuelwestermeier.github.io/bg.jpg");
+    background: linear-gradient(to bottom, transparent, var(--d), var(--d)), url("https://manuelwestermeier.github.io/bg.jpg");
     background-size: 100vw;
     gap: 10px;
 }
@@ -110,7 +110,7 @@ a {
     padding: 10px;
     display: grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 0.4fr));
     gap: 10px;
     max-width: 100%;
 }
@@ -122,6 +122,19 @@ a {
     position: relative;
     box-shadow: 0 0 5px 0 var(--p);
     border: 2px solid var(--p);
+    transition: all 0.2s ease-in-out;
+}
+
+.user-animated:nth-child(2) {
+    transition-delay: 600ms;
+}
+
+.user-animated:nth-child(3) {
+    transition-delay: 1200ms;
+}
+
+.user-animated:nth-child(4) {
+    transition-delay: 1800ms;
 }
 
 .users .user img {
@@ -140,5 +153,15 @@ a {
     background-color: #13171c54;
     border-radius: 5px;
     font-size: 0.6rem;
-    word-break: break-all;
+    transition: all 0.2s ease-in-out;
+}
+
+.users .user:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 100px 0 var(--p);
+}
+
+.users .user:hover p {
+    font-size: 1rem;
 }
